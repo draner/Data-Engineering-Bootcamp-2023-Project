@@ -2,6 +2,7 @@
 
 - [1. Project Summary](#1-project-summary)
 - [2. Why /pol/ ?](#2-why-pol-)
+- [3. Data sources](#3-data-sources)
 
 ## Project: Ingesting data from /pol/ and get insights on trends <!-- omit in toc -->
 
@@ -13,3 +14,6 @@ The goal of this project is to ingest data from the /pol/ board on 4chan and get
 
 Because if we're here to play with data, we might as well look for insights from the biggest troll board on the internet. Also, the data is public and free to use.
 
+### 3. Data sources
+
+The data will be gathered from the official 4chan API using [BASC-py4chan](https://basc-py4chan.readthedocs.io/en/latest/index.html).
