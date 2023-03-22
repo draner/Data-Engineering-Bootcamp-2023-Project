@@ -1,11 +1,9 @@
 # End Project for the Data Engineering Bootcamp 2023 <!-- omit in toc -->
 
-- [Project: Ingesting data from /pol/ and get insights on trends](#project-ingesting-data-from-pol-and-get-insights-on-trends)
-  - [1. Project Summary](#1-project-summary)
-  - [2. Why /pol/ ?](#2-why-pol-)
+- [1. Project Summary](#1-project-summary)
+- [2. Why /pol/ ?](#2-why-pol-)
 
-
-## Project: Ingesting data from /pol/ and get insights on trends
+## Project: Ingesting data from /pol/ and get insights on trends <!-- omit in toc -->
 
 ### 1. Project Summary
 
