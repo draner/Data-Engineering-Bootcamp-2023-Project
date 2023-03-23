@@ -1,0 +1,21 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: pol-extract
+  status: not_executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: pol_extract
+data_integration: null
+description: null
+extensions: {}
+name: rough night
+type: python
+uuid: rough_night
+widgets: []
