@@ -42,8 +42,8 @@ The data will be stored in BigQuery using two tables:
 #### EL phase, extracting data from 4chan API and storing it in GCP Buckets
 
 The first step is to extract the data from the 4chan API and store it in GCP buckets. The data will be stored in Parquet format.
-For threads, we will create one file per thread naming it `thread_[thread_id].parquet`.
-For posts, we will create one file per thread naming it `posts_[thread_id]_[number_of_posts].parquet`. This will allow us to easily update the data with each run.
+For threads, we will create one file per thread naming it `threads_{timestamp}.parquet`.
+For posts, we will create one file per thread naming it `posts_{thread_id}_{number_of_posts}.parquet`. This will allow us to easily update the data with each run.
 
 #### T phase, processing the data and storing it in BigQuery
 

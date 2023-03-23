@@ -1,0 +1,3 @@
+pyarrow
+pandas
+basc_py4chan
