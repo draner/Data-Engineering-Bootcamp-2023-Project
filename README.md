@@ -14,7 +14,7 @@
 
 ### 1. Project Summary
 
-The goal of this project is to ingest data from the /pol/ board on 4chan and get insights on trends. The data will be ingested from the 4chan API and stored in GCP Buckets. A Prefect pipeline will then be used to orchestrate the ingestion and storage of the data. Then a second pipeline (DBT) will be used to process the data and store it in BigQuery. Finally, we'll use Data Studio to visualize the data and create a dashboard.
+The goal of this project is to ingest data from the /pol/ board on 4chan and get insights on trends. The data will be ingested from the 4chan API and stored in GCP Buckets. A Mage.ai pipeline will be used to orchestrate the ingestion and storage of the data. Then a second pipeline will be used to process the data and store it in BigQuery. Finally, we'll use Data Studio to visualize the data and create a dashboard.
 
 ### 2. Why /pol/ ?
 
@@ -39,7 +39,7 @@ The data will be stored in BigQuery using two tables:
 
 The first step is to extract the data from the 4chan API and store it in GCP buckets. The data will be stored in Parquet format.
 For threads, we will create one file per thread naming it `thread_[thread_id].parquet`.
-For posts, we will create one file per thread naming it `posts_[thread_id]_[number_of_posts].parquet`. This will allow us to easily update the data with each run of our prefect flow.
+For posts, we will create one file per thread naming it `posts_[thread_id]_[number_of_posts].parquet`. This will allow us to easily update the data with each run.
 
 #### T phase, processing the data and storing it in BigQuery
 
@@ -57,7 +57,7 @@ We can clean that manifest table for all the files that are older than 30 days. 
 
 ### Deployment needs, infrastructure details and costs
 
-Because we will be processing a relatively small amount of data, we can use the free tier Compute Engine VM to run our Prefect flow and DBT pipeline.
+Because we will be processing a relatively small amount of data, we can use the free tier Compute Engine VM to run our pipelines.
 The only cost we will have is the cost of the GCP buckets and BigQuery tables, which are negligible for that amount of data.
 
 ### How to run the project
