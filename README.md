@@ -20,6 +20,10 @@ The goal of this project is to ingest data from the /pol/ board on 4chan and get
 
 Because if we're here to play with data, we might as well look for insights from the biggest troll board on the internet. Also, the data is public and free to use.
 
+|![Internet Troll](images/00242-4293654995-internet%20troll.png)|
+|:--:| 
+| *Internet Troll in his natural habitat* |
+
 ### 3. Data sources
 
 The data will be gathered from the official 4chan API using [BASC-py4chan](https://basc-py4chan.readthedocs.io/en/latest/index.html).
