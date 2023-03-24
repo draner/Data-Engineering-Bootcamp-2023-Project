@@ -1,0 +1,8 @@
+.vscode
+.venv
+
+# Don't upload the notebooks/data folder contents
+notebooks/data/*
+
+# Don't upload the secrets
+mage_project\de-bootcamp-project\io_config.yaml
