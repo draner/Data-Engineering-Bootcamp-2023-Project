@@ -1,4 +1,6 @@
-# End Project for the Data Engineering Bootcamp 2023 <!-- omit in toc -->
+# /pol/-IT : /pol/ Insights from Trolls <!-- omit in toc -->
+
+## End Project for the Data Engineering Bootcamp 2023 <!-- omit in toc -->
 
 - [1. Project Summary](#1-project-summary)
 - [2. Why /pol/ ?](#2-why-pol-)
@@ -21,7 +23,7 @@ The goal of this project is to ingest data from the /pol/ board on 4chan and get
 Because if we're here to play with data, we might as well look for insights from the biggest troll board on the internet. Also, the data is public and free to use.
 
 |![Internet Troll](images/00242-4293654995-internet%20troll.png)|
-|:--:| 
+|:--:|
 | *Internet Troll in his natural habitat* |
 
 ### 3. Data sources
@@ -42,40 +44,36 @@ The data will be stored in BigQuery using two tables:
 #### EL phase, extracting data from 4chan API and storing it in GCP Buckets
 
 The first step is to extract the data from the 4chan API and store it in GCP buckets. The data will be stored in Parquet format.
+Mage.ai will be used to orchestrate the extraction of the data.
 For threads, we will create one file per thread naming it `threads_{timestamp}.parquet`.
-For posts, we will create one file per thread naming it `posts_{thread_id}.parquet`. This will allow us to easily update the data with each run.
+For posts, we will create one file per thread naming it `posts_{thread_id}_{number_of_posts}.parquet`. This will allow us to easily update the data with each run from the orchestrator.
+In addition to that, a second Mage pipeline will be used to transfer the raw data inside BigQuery. This will allow us to have a DataLake in GCP and a DataWarehouse in BigQuery.
 
 #### T phase, processing the data and storing it in BigQuery
 
-For the Transform phase, we will use DBT to process the data and store it in BigQuery.
-The goal is to populate our two tables `posts` and `threads` with the data we extracted from the 4chan API, taking care of duplicates and updating the data when needed.
-For that, we will keep track of all the files we have already processed in a `manifest` table in BigQuery.
-The manifest table will contain the following columns:
+For the Transform phase, we will use DBT to process the data and create useful tables in BigQuery.
+The goal is to populate our two tables `posts` and `threads` with the data we extracted from the 4chan API, taking care of duplicates and cleaning the data when needed.
 
-- `file_name`: the name of the file
-- `processed_date`: the datetime when the file was processed
+### 6. Data Visualization
 
-We will use the `file_name` column to check if a file has already been processed. If it has, we will skip it. If it hasn't, we will process it and add it to the manifest table.
-
-We can clean that manifest table for all the files that are older than 30 days. (the average lifespan of a thread on 4chan is only a few days anyway)
+We will use Data Studio to visualize the data and create a dashboard.
 
 ### Deployment needs, infrastructure details and costs
 
 Because we will be processing a relatively small amount of data, we can use the free tier Compute Engine VM to run our pipelines.
 The only cost we will have is the cost of the GCP buckets and BigQuery tables, which are negligible for that amount of data.
 
+!TODO: Calculate the cost of the project based on the amount of data we'll be processing.
+
+![Infrastructure](images/infra_diagram.png)
+
 ### How to run the project
 
 Further instructions on how to replicate this project will be added soon.
 
+## Notes for later
 
-# Notes for later
-
-Things i want :
-
-- Automate the deployment of the pipelines with each commit (i probably need to use GitHub actions for that)
-- Have an automated way to clean the bucket from old files while uploading data
-- Maybe bypass the DataLake and directly upload the data to BigQuery (Data is pretty well structured, so it might be a good idea, i then only have to check for duplicates when adding lines to the tables and rerun the partitioning and clustering on the tables)
-- A way to handle the manifest table
 - How to deploy the pipelines on a VM
   - Mage seems to be able to schedule pipelines, but i need to figure out how to maintain and updated docker container running on the VM. (Watchtower ?)
+- Automate the deployment of the pipelines with each commit (i probably need to use GitHub actions for that)
+- Have an automated way to clean the bucket from old files (need to calculate the amount of data I'll have in the bucket and the cost of storing it)
