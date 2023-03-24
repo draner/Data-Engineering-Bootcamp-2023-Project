@@ -6,3 +6,6 @@ notebooks/data/*
 
 # Don't upload the secrets
 mage_project\de-bootcamp-project\io_config.yaml
+
+# Don't upload the service account key
+pol-it-de-zoomcamp-service-account.json
