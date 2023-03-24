@@ -1,0 +1,8 @@
+blocks: []
+data_integration: null
+description: null
+extensions: {}
+name: from bucket to bigquery
+type: python
+uuid: from_bucket_to_bigquery
+widgets: []

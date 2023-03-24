@@ -1,0 +1,48 @@
+version: 0.1.1
+default:
+  # Default profile created for data IO access.
+  # Add your credentials for the source you use, and delete the rest.
+  AWS_ACCESS_KEY_ID: "{{ env_var('AWS_ACCESS_KEY_ID') }}"
+  AWS_SECRET_ACCESS_KEY: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"
+  AWS_SESSION_TOKEN: session_token (Used to generate Redshift credentials)
+  AWS_REGION: region
+  AZURE_CLIENT_ID: "{{ env_var('AZURE_CLIENT_ID') }}"
+  AZURE_CLIENT_SECRET: "{{ env_var('AZURE_CLIENT_SECRET') }}"
+  AZURE_STORAGE_ACCOUNT_NAME: "{{ env_var('AZURE_STORAGE_ACCOUNT_NAME') }}"
+  AZURE_TENANT_ID: "{{ env_var('AZURE_TENANT_ID') }}"
+  GOOGLE_SERVICE_ACC_KEY:
+    type: service_account
+    project_id: pol-it-de-zoomcamp
+    private_key_id: d685906354ff6b6a8cfdb2dc55f261f4207b920e
+    private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCkY1OfSkoz1ptp\ngHK1cZXujMYuMdyV8AJrdI59JrbNOZFwYv7K4lzqM+bsSK7xU/J9Iu0Mt/87/LYr\nMacWCdnXmgIOvANavkwPQ+t1bpmZlWRRazW2gwoNhi4qX3cS0VFO8XRbE3AMgkbo\nPEPe7p2vrYXFVBTwHlVNJ0Yf5scFb8kNbtBhoErDrr5tkpEVtwfwITFlMJ9tJyxV\nDxibhdcOUQ2ziqQ95lgVK/Lu6W/QS1cPWiLENStA9yi4PIhRtWqauJdMvevSqgUJ\nlFW19KvGcngO2MjXV5YF8Mx/ljZw0HrmErie2c720kD4yT93w4vdDEM8NEi9qDXS\nR+yqK5ndAgMBAAECggEAJlyWiFroD4pSmK90tWJ1HGbmHaQdp7DLg8N+t/Z3nNNF\nHS7A6lwiVjY3+qZoiuEt+qVSn8/1ZEyQP2q2JPa2CzIBrmoSN1QmwD43nZ8qgZSD\nBVwJPBb+2tKYBePiz/WgbZV7s4BI+uZRAUOFDCpvim5qQ/cf7rwJaHiUjP/ILHx+\niU5KwCXIk3JT8mSP3gnVIBeSDoWzNySiq2j1+9y6MIZyQW3w48vU4nD1X720PSLP\nddI6/bAc8Z6hcxuNZSlvAzBcRL03xVZrMujFUZYMM9/uiG4kttqt29etydM4Ptaw\nX2t6aIN/ZDguDmyOc3TqF+DEIA0+Mu666Y0t5Ov40QKBgQDZ6II1aMzmWX+q/8Qy\nwS/6PzxJiMcNxj0VX/zA6QCZqb17qVL7Ak1zt1lP6h5QgPD09ekzfibeyv7XJYyb\ndrR3W7GbX4fbSthTItZKrbGjjI0Tp1hXrLNnQ4rd1BqloxjfgLBOEmOBVX8cV5Xh\nLnNMqKOYFOqJwX0D3oS0Nw4SkQKBgQDBH8NfVithaif9H/hjFRRpEur4lwV0OktT\nHsY7lDpbjmeTdvzKEPjh2eGfBNvtr6R+L1uFOuoWDBhuVbHnj/qS7cD8r8JE5au2\nveMyA+qJjDhASc/5bvrCx+EoTk4/h/8rpUMvMm3148kFnF+w01Pg3jKcQCSvqW8T\n99qMCaVgjQKBgQC7LqbrCiM4nBi24w2+K4TzCe7Xm86hXnCKM/ICJCSH2u8Rktnd\nFJVDmXP22b1AmgJh6ftwaCUrrGRMm8y0nrtW7EUcmmsxTJGWmI5Lh/jX7JwjDdUt\nOwTA55waAWECd5+eHgVUiyc+qhqOVg5BaI1ShGpC8XSm8LZa5IJJ7CECgQKBgGdK\ngcg/4jvb9z9fFg6Ie74nLB2BSJ19gEQYtZWwFfZaF/O7NEEvCq5hRlcy1h4uTyBe\nW+jKNeFM3tREaT6ctzxWhV2g85q97DV1Ikrh5VNj98IKuH2EagI7vaU9HITGTCgf\n3+siYcWd6yphFJ0Sqk4fCZqgg/6f9JUNf4permERAoGBALUqxOx3SCSz+NQd4YMo\nAOODxE4qX1acmhXV30qFxIjz03JVLG0w3lZ5Ra8KCROsk1FCaDjoC0d8FufZjqxm\n1a9vZWnrm/sxMSNBbZihh3xLCsBD+nbV3TMA/ga3veb9xy9ERoC8dAeRnAuYZL7O\nqKdcQQIepwCvMBKIZcXkx0RG\n-----END PRIVATE KEY-----\n"
+    client_email: pol-it-mage@pol-it-de-zoomcamp.iam.gserviceaccount.com
+    auth_uri: "https://accounts.google.com/o/oauth2/auth"
+    token_uri: "https://oauth2.googleapis.com/token"
+    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/pol-it-mage%40pol-it-de-zoomcamp.iam.gserviceaccount.com"
+  GOOGLE_SERVICE_ACC_KEY_FILEPATH: "pol-it-de-zoomcamp-service-account.json"
+  MYSQL_DATABASE: database
+  MYSQL_HOST: host
+  MYSQL_PASSWORD: password
+  MYSQL_PORT: 3306
+  MYSQL_USER: root
+  POSTGRES_DBNAME: postgres
+  POSTGRES_USER: username
+  POSTGRES_PASSWORD: password
+  POSTGRES_HOST: hostname
+  POSTGRES_PORT: 5432
+  REDSHIFT_DBNAME: redshift_db_name
+  REDSHIFT_HOST: redshift_cluster_id.identifier.region.redshift.amazonaws.com
+  REDSHIFT_PORT: 5439
+  REDSHIFT_TEMP_CRED_USER: temp_username
+  REDSHIFT_TEMP_CRED_PASSWORD: temp_password
+  REDSHIFT_DBUSER: redshift_db_user
+  REDSHIFT_CLUSTER_ID: redshift_cluster_id
+  REDSHIFT_IAM_PROFILE: default
+  SNOWFLAKE_USER: username
+  SNOWFLAKE_PASSWORD: password
+  SNOWFLAKE_ACCOUNT: account_id.region
+  SNOWFLAKE_DEFAULT_WH: default_warehouse
+  SNOWFLAKE_DEFAULT_DB: optional_default_database
+  SNOWFLAKE_DEFAULT_SCHEMA: optional_default_schema
+  SNOWFLAKE_ROLE: role

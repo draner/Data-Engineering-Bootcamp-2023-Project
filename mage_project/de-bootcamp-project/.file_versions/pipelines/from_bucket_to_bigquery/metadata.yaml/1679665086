@@ -1,0 +1,51 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - big_query_export
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: bucket_threads_loader
+  status: not_executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: bucket_threads_loader
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - big_query_export
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: bucket_posts_loader
+  status: not_executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: bucket_posts_loader
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: big_query export
+  status: not_executed
+  type: data_exporter
+  upstream_blocks:
+  - bucket_posts_loader
+  - bucket_threads_loader
+  uuid: big_query_export
+data_integration: null
+description: null
+extensions: {}
+name: from bucket to bigquery
+type: python
+uuid: from_bucket_to_bigquery
+widgets: []

@@ -1,0 +1,21 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Api call
+  status: not_executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: api_call
+data_integration: null
+description: null
+extensions: {}
+name: from_4chan_to_bucket
+type: python
+uuid: from_4chan_to_bucket
+widgets: []

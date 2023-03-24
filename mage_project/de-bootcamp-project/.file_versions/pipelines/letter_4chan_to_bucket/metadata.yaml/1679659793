@@ -1,0 +1,8 @@
+blocks: []
+data_integration: null
+description: null
+extensions: {}
+name: 4chan to bucket
+type: python
+uuid: letter_4chan_to_bucket
+widgets: []

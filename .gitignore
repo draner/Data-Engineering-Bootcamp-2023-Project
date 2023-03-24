@@ -8,5 +8,7 @@ notebooks/data/*
 mage_project/de-bootcamp-project/io_config.yaml
 mage_project/de-bootcamp-project/metadata.yaml
 
+
 # Don't upload the service account key
 pol-it-de-zoomcamp-service-account.json
+profiles.yml

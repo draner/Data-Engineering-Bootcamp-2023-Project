@@ -1,0 +1,34 @@
+import pandas as pd
+import basc_py4chan
+
+if 'data_loader' not in globals():
+    from mage_ai.data_preparation.decorators import data_loader
+if 'test' not in globals():
+    from mage_ai.data_preparation.decorators import test
+
+
+@data_loader
+def load_data(*args, **kwargs):
+    """
+    Template code for loading data from any source.
+
+    Returns:
+        Anything (e.g. data frame, dictionary, array, int, str, etc.)
+    """
+    # First, we need to create a board object. This is the object that will be used to access the board.
+    board = basc_py4chan.Board('pol')
+
+    # Now we can retrieve all the threads on the board.
+    threads = board.get_all_threads(expand=False)
+    threads_ids = board.get_all_thread_ids()
+    print('There are', len(threads), 'active threads on /pol/')
+
+    return {}
+
+
+@test
+def test_output(output, *args) -> None:
+    """
+    Template code for testing the output of the block.
+    """
+    assert output is not None, 'The output is undefined'

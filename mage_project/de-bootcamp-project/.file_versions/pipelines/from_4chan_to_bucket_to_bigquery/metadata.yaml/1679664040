@@ -1,0 +1,54 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - upload_to_bucket
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: _4chan_API loader
+  status: updated
+  type: data_loader
+  upstream_blocks: []
+  uuid: _4chan_api_loader
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: upload_to_bucket
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - _4chan_api_loader
+  uuid: upload_to_bucket
+data_integration: null
+description: null
+extensions: {}
+name: from_4chan_to_bucket_to_bigquery
+type: python
+uuid: from_4chan_to_bucket_to_bigquery
+widgets:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    buckets: 10
+    chart_type: bar chart
+    group_by:
+    - thread_id
+    x: x
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: histogram for _4chan_threads 1679661093569
+  status: failed
+  type: chart
+  upstream_blocks: []
+  uuid: histogram_for__4chan_threads_1679661093569
