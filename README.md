@@ -67,3 +67,15 @@ The only cost we will have is the cost of the GCP buckets and BigQuery tables, w
 ### How to run the project
 
 Further instructions on how to replicate this project will be added soon.
+
+
+# Notes for later
+
+Things i want :
+
+- Automate the deployment of the pipelines with each commit (i probably need to use GitHub actions for that)
+- Have an automated way to clean the bucket from old files while uploading data
+- Maybe bypass the DataLake and directly upload the data to BigQuery (Data is pretty well structured, so it might be a good idea, i then only have to check for duplicates when adding lines to the tables and rerun the partitioning and clustering on the tables)
+- A way to handle the manifest table
+- How to deploy the pipelines
+  - I'm leaning towards using prefect to run the pipelines, but i need to make sure I can run in a CI/CD mindset.
