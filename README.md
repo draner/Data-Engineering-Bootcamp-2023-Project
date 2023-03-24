@@ -77,5 +77,5 @@ Things i want :
 - Have an automated way to clean the bucket from old files while uploading data
 - Maybe bypass the DataLake and directly upload the data to BigQuery (Data is pretty well structured, so it might be a good idea, i then only have to check for duplicates when adding lines to the tables and rerun the partitioning and clustering on the tables)
 - A way to handle the manifest table
-- How to deploy the pipelines
-  - I'm leaning towards using prefect to run the pipelines, but i need to make sure I can run in a CI/CD mindset.
+- How to deploy the pipelines on a VM
+  - Mage seems to be able to schedule pipelines, but i need to figure out how to maintain and updated docker container running on the VM.
