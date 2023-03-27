@@ -1,0 +1,1 @@
+{"thread_id": "int64", "post_id": "int64", "poster_id": "str", "poster_name": "str", "is_op": "bool", "tripcode": "str", "subject": "str", "comment": "str", "has_file": "bool", "post_datetime": "datetime64[ns]", "url": "str", "file_name": "str", "file_extension": "str"}

@@ -1,0 +1,21 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: teal
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: execute dbt job
+  status: not_executed
+  type: custom
+  upstream_blocks: []
+  uuid: execute_dbt_job
+data_integration: null
+description: null
+extensions: {}
+name: dbt model execution
+type: python
+uuid: dbt_model_execution
+widgets: []

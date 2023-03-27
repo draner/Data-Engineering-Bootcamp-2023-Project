@@ -1,0 +1,31 @@
+if 'custom' not in globals():
+    from mage_ai.data_preparation.decorators import custom
+if 'test' not in globals():
+    from mage_ai.data_preparation.decorators import test
+from mage_ai.services.dbt.dbt import DbtCloudClient
+
+
+
+
+
+@custom
+def dbt_model_execution(*args, **kwargs):
+    """
+    Returns:
+        Anything (e.g. data frame, dictionary, array, int, str, etc.)
+    """
+    # Specify your custom logic here
+    client = DbtCloudClient(dict(account_id=148403, api_token='65a52d89ef6730fff272b2794035fed23d569fd0'))
+
+    # Set poll_status=True to wait for job completion.
+    # Set poll_status=False to not wait for job completion.
+    client.trigger_job_run(254966, poll_status=True)
+    return {}
+
+
+@test
+def test_output(output, *args) -> None:
+    """
+    Template code for testing the output of the block.
+    """
+    assert output is not None, 'The output is undefined'
