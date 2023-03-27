@@ -61,14 +61,25 @@ In addition to that, a second Mage pipeline will be used to transfer the raw dat
 For the Transform phase, we will use a DBT model to process the data and create useful tables in BigQuery.
 The goal is to populate our two tables `posts` and `threads` with the data we extracted from the 4chan API, taking care of duplicates and cleaning the data when needed.
 With each run of the dbt model, we will empty the tables created by the orchestrator and populate the clean tables incrementally.
+The posts table will be partitioned by date for easy access when querying the data.
 
-### 6. Data Visualization
+### 6. Orchestration and Scheduling
+
+Mage.ai will be used to orchestrate the ingestion of the data from the 4chan API and the transfer of the data to BigQuery.
+There is two pipelines :
+
+- The first one will pull the data from the 4chan API and store it in GCP buckets (every hour at 25 minutes past the hour)
+- The second one will transfer the data from the GCP buckets to BigQuery (every hour at 35 minutes past the hour)
+
+The dbt-cloud job is scheduled to run every hour.
+
+### 7. Data Visualization
 
 !TODO: Choose a visualization tool and create a dashboard
 
-### 7. Deployment needs, infrastructure details and costs
+### 8. Deployment needs, infrastructure details and costs
 
-Because we will be processing a relatively small amount of data, we can use the free tier Compute Engine VM to run our pipelines.
+Because we will be processing a relatively small amount of data at a time, we can use the free tier Compute Engine VM to run our Mage.ai pipelines.
 The only cost we will have is the cost of the GCP buckets and BigQuery tables, which are negligible for that amount of data.
 
 !TODO: Calculate the cost of the project based on the amount of data we'll be processing.
