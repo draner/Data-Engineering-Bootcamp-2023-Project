@@ -8,7 +8,7 @@
 )}}
 
 with
-    old_posts as (select * from `pol-it-de-zoomcamp.deployment.posts`),
+    old_posts as (select * from `pol-it-de-zoomcamp.dbt_vrenard.posts`),
     new_posts as (select * from `pol-it-de-zoomcamp.pol_data.posts_raw`)
 select *
 from new_posts

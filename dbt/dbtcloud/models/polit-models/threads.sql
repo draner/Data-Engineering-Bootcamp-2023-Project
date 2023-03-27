@@ -1,7 +1,7 @@
 {{ config(materialized="table") }}
 
 with
-    old_threads as (select * from `pol-it-de-zoomcamp.deployment.threads`),
+    old_threads as (select * from `pol-it-de-zoomcamp.dbt_vrenard.threads`),
     new_threads as (select * from `pol-it-de-zoomcamp.pol_data.threads_raw`)
 select *
 from new_threads
