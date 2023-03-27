@@ -79,8 +79,8 @@ The dbt-cloud job is scheduled to run every hour.
 
 ### 8. Deployment needs, infrastructure details and costs
 
-Because we will be processing a relatively small amount of data at a time, we can use the free tier Compute Engine VM to run our Mage.ai pipelines.
-The only cost we will have is the cost of the GCP buckets and BigQuery tables, which are negligible for that amount of data.
+For deployment needs, we will use Terraform to create the infrastructure needed to run the project.
+The infrastructure will be deployed on GCP and the estimated cost / month is *TBD*.
 
 !TODO: Calculate the cost of the project based on the amount of data we'll be processing.
 
@@ -88,10 +88,8 @@ The only cost we will have is the cost of the GCP buckets and BigQuery tables, w
 
 ### How to run the project
 
-~~The Mage Dockerfile is available in the `mage_project` folder. You can build the image yourself and run the pipelines.
-Keep in mind that you will need to configure the GCP credentials for google cloud storage and bigquery.~~
-
-**SOON**
+The Mage Dockerfile is available in the `mage_project` folder. You can build the image yourself and run the pipelines.
+Keep in mind that you will need to configure the GCP credentials for google cloud storage and bigquery.
 
 ## Notes for later
 

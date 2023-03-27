@@ -12,3 +12,4 @@ mage_project/de-bootcamp-project/metadata.yaml
 # Don't upload the service account key
 pol-it-de-zoomcamp-service-account.json
 profiles.yml
+secrets.txt
