@@ -1,8 +1,0 @@
-blocks: []
-data_integration: null
-description: null
-extensions: {}
-name: dbt transformation
-type: python
-uuid: dbt_transformation
-widgets: []

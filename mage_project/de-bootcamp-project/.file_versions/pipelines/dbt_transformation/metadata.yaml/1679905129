@@ -1,0 +1,22 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: polit/models/polit-models/dbt_threads.sql
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: polit/models/polit-models/dbt_threads
+  status: failed
+  type: dbt
+  upstream_blocks: []
+  uuid: polit/models/polit_models/dbt_threads
+data_integration: null
+description: null
+extensions: {}
+name: dbt transformation
+type: python
+uuid: dbt_transformation
+widgets: []

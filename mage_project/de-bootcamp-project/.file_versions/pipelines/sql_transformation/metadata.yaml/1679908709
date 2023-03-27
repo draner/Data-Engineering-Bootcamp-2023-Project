@@ -1,0 +1,25 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: bigquery
+    data_provider_profile: default
+    export_write_policy: append
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: threads SQL transform
+  status: updated
+  type: transformer
+  upstream_blocks: []
+  uuid: threads_sql_transform
+data_integration: null
+description: null
+extensions: {}
+name: sql_transformation
+type: python
+uuid: sql_transformation
+widgets: []

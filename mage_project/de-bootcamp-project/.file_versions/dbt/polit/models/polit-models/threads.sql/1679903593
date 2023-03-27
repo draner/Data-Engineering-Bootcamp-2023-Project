@@ -1,0 +1,2 @@
+--Docs: https://docs.mage.ai/dbt/sources
+SELECT * FROM `pol-it-de-zoomcamp.pol_data.threads`

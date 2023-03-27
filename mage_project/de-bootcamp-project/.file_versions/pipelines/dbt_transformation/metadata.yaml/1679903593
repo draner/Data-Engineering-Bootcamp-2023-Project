@@ -1,0 +1,38 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: polit/models/polit-models/posts.sql
+  downstream_blocks:
+  - polit/models/polit_models/threads
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: polit/models/polit-models/posts
+  status: not_executed
+  type: dbt
+  upstream_blocks: []
+  uuid: polit/models/polit_models/posts
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: polit/models/polit-models/threads.sql
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: polit/models/polit-models/threads
+  status: updated
+  type: dbt
+  upstream_blocks:
+  - polit/models/polit_models/posts
+  uuid: polit/models/polit_models/threads
+data_integration: null
+description: null
+extensions: {}
+name: dbt transformation
+type: python
+uuid: dbt_transformation
+widgets: []
