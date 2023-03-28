@@ -3,7 +3,7 @@
     partition_by={
       "field": "post_datetime",
       "data_type": "timestamp",
-      "granularity": "day"
+      "granularity": "hour"
     }
 )}}
 
