@@ -1,4 +1,4 @@
-{{ config(materialized="table") }}
+{{ config(materialized="incremental") }}
 
 with
     old_threads as (select * from `pol-it-de-zoomcamp.dbt_vrenard.threads`),
