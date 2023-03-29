@@ -9,7 +9,10 @@
 - [5. ELT Process](#5-elt-process)
   - [EL phase, extracting data from 4chan API and storing it in GCP Buckets](#el-phase-extracting-data-from-4chan-api-and-storing-it-in-gcp-buckets)
   - [T phase, processing the data and storing it in BigQuery](#t-phase-processing-the-data-and-storing-it-in-bigquery)
-- [Deployment needs, infrastructure details and costs](#deployment-needs-infrastructure-details-and-costs)
+- [6. Orchestration and Scheduling](#6-orchestration-and-scheduling)
+- [7. Data Visualization](#7-data-visualization)
+- [8. Deployment needs, infrastructure details and costs](#8-deployment-needs-infrastructure-details-and-costs)
+- [9. CI/CD](#9-cicd)
 - [How to run the project](#how-to-run-the-project)
 
 ## Project: Ingesting data from /pol/ and get insights on trends <!-- omit in toc -->
@@ -86,14 +89,12 @@ The infrastructure will be deployed on GCP and the estimated cost / month is *TB
 
 ![Infrastructure](images/infra_diagram.png)
 
+### 9. CI/CD
+
+We have configured a Github Action to update the docker image of mage and push it to the GCP Container Registry. every time a new commit is pushed to the `master` branch.
+
 ### How to run the project
 
 The Mage Dockerfile is available in the `mage_project` folder. You can build the image yourself and run the pipelines.
 Keep in mind that you will need to configure the GCP credentials for google cloud storage and bigquery.
 
-## Notes for later
-
-- How to deploy the pipelines on a VM
-  - Mage seems to be able to schedule pipelines, but i need to figure out how to maintain and updated docker container running on the VM. (Watchtower ?)
-- Automate the deployment of the pipelines with each commit (i probably need to use GitHub actions for that)
-- Have an automated way to clean the bucket from old files (need to calculate the amount of data I'll have in the bucket and the cost of storing it)
