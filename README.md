@@ -92,6 +92,7 @@ The infrastructure will be deployed on GCP and the estimated cost / month is *TB
 ### 9. CI/CD
 
 We have configured a Github Action to update the docker image of mage and push it to the GCP Container Registry. every time a new commit is pushed to the `master` branch.
+This will allow us to update the mage image without having to rebuild it manually.
 
 ### How to run the project
 
