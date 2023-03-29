@@ -14,3 +14,5 @@ pol-it-de-zoomcamp-service-account.json
 profiles.yml
 secrets.txt
 service account github.json
+terraform/*
+terraform/mage-ai-terraform-templates
