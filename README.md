@@ -61,7 +61,7 @@ In addition to that, a second Mage pipeline will be used to transfer the raw dat
 For the Transform phase, we will use a DBT model to process the data and create useful tables in BigQuery.
 The goal is to populate our two tables `posts` and `threads` with the data we extracted from the 4chan API, taking care of duplicates and cleaning the data when needed.
 With each run of the dbt model, we will empty the tables created by the orchestrator and populate the clean tables incrementally.
-The posts table will be partitioned by date for easy access when querying the data.
+The posts table will be partitioned by hour for easy access when querying the data.
 
 ### 6. Orchestration and Scheduling
 

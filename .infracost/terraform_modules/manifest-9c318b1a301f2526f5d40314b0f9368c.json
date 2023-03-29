@@ -1,0 +1,1 @@
+{"Path":"e:\\Sync\\projet_data_engineering\\terraform\\mage-ai-terraform-templates\\gcp-dev","Version":"2.0","Modules":[{"Key":"lb-http","Source":"registry.terraform.io/GoogleCloudPlatform/lb-http/google//modules/serverless_negs","Version":"6.3.0","Dir":".infracost\\terraform_modules\\ec435c77cee005d7050a85d6f2626f0d\\modules\\serverless_negs"}]}

@@ -1,0 +1,50 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: _4chan_posts
+  status: not_executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: _4chan_posts
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: _4chan_threads
+  status: not_executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: _4chan_threads
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: upload_to_bucket
+  status: not_executed
+  type: data_exporter
+  upstream_blocks: []
+  uuid: upload_to_bucket
+data_integration: null
+description: null
+extensions: {}
+name: master_pipeline
+type: python
+uuid: master_pipeline
+widgets: []

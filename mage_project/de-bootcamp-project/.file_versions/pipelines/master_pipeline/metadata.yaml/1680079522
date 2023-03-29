@@ -1,0 +1,8 @@
+blocks: []
+data_integration: null
+description: null
+extensions: {}
+name: master_pipeline
+type: python
+uuid: master_pipeline
+widgets: []

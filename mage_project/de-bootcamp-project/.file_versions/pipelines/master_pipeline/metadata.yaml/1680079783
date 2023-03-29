@@ -1,0 +1,104 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - upload_to_bucket
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: _4chan_posts
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: _4chan_posts
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - upload_to_bucket
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: _4chan_threads
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: _4chan_threads
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - bucket_threads_loader
+  - bucket_posts_loader
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: upload_to_bucket
+  status: not_executed
+  type: data_exporter
+  upstream_blocks:
+  - _4chan_threads
+  - _4chan_posts
+  uuid: upload_to_bucket
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - big_query_export
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: bucket_posts_loader
+  status: not_executed
+  type: data_loader
+  upstream_blocks:
+  - upload_to_bucket
+  uuid: bucket_posts_loader
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - big_query_export
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: bucket_threads_loader
+  status: not_executed
+  type: data_loader
+  upstream_blocks:
+  - upload_to_bucket
+  uuid: bucket_threads_loader
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: big_query_export
+  status: not_executed
+  type: data_exporter
+  upstream_blocks:
+  - bucket_posts_loader
+  - bucket_threads_loader
+  uuid: big_query_export
+data_integration: null
+description: null
+extensions: {}
+name: master_pipeline
+type: python
+uuid: master_pipeline
+widgets: []

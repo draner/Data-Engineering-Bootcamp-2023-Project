@@ -1,0 +1,1 @@
+{"thread_id": "int64", "is_sticky": "bool", "is_closed": "bool", "topic": "str", "number_of_posts": "int64", "url": "str"}
