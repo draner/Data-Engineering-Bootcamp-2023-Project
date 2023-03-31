@@ -69,12 +69,12 @@ The posts table will be partitioned by hour for easy access when querying the da
 ### 6. Orchestration and Scheduling
 
 Mage.ai will be used to orchestrate the ingestion of the data from the 4chan API and the transfer of the data to BigQuery.
-There is two pipelines :
+There is a pipeline executed every 10 minutes for each step :
 
-- The first one will pull the data from the 4chan API and store it in GCP buckets (every hour at 25 minutes past the hour)
-- The second one will transfer the data from the GCP buckets to BigQuery (every hour at 35 minutes past the hour)
+- The first one will pull the data from the 4chan API and store it in GCP buckets
+- The second one will transfer the data from the GCP buckets to BigQuery
 
-The dbt-cloud job is scheduled to run every 10 minutes.
+The dbt-cloud job is also scheduled to run every 10 minutes.
 
 ### 7. Data Visualization
 
