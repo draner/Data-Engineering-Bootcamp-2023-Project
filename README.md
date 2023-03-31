@@ -69,33 +69,30 @@ The posts table will be partitioned by hour for easy access when querying the da
 ### 6. Orchestration and Scheduling
 
 Mage.ai will be used to orchestrate the ingestion of the data from the 4chan API and the transfer of the data to BigQuery.
-There is two pipelines :
+There is a pipeline executed every 10 minutes for each step :
 
-- The first one will pull the data from the 4chan API and store it in GCP buckets (every hour at 25 minutes past the hour)
-- The second one will transfer the data from the GCP buckets to BigQuery (every hour at 35 minutes past the hour)
+- The first one will pull the data from the 4chan API and store it in GCP buckets
+- The second one will transfer the data from the GCP buckets to BigQuery
 
-The dbt-cloud job is scheduled to run every hour.
+The dbt-cloud job is also scheduled to run every 10 minutes.
 
 ### 7. Data Visualization
 
-!TODO: Choose a visualization tool and create a dashboard
+The dashboard is made using Looker Studio and is available here : [DASHBOARD](https://lookerstudio.google.com/reporting/c40419e3-d28a-41bd-b04f-ae5114de5fd6)
 
 ### 8. Deployment needs, infrastructure details and costs
 
 For deployment needs, we will use Terraform to create the infrastructure needed to run the project.
-The infrastructure will be deployed on GCP and the estimated cost / month is *TBD*.
-
-!TODO: Calculate the cost of the project based on the amount of data we'll be processing.
+The infrastructure will be deployed on GCP.
 
 ![Infrastructure](images/infra_diagram.png)
 
 ### 9. CI/CD
 
-We have configured a Github Action to update the docker image of mage and push it to the GCP Container Registry. every time a new commit is pushed to the `master` branch.
+We have configured a GitHub Action to update the  mage docker image and push it to the GCP Container Registry every time a new commit is pushed to the `master` branch.
 This will allow us to update the mage image without having to rebuild it manually.
 
 ### How to run the project
 
 The Mage Dockerfile is available in the `mage_project` folder. You can build the image yourself and run the pipelines.
-Keep in mind that you will need to configure the GCP credentials for google cloud storage and bigquery.
-
+Keep in mind that you will need to configure the GCP credentials for google cloud storage and BigQuery.
