@@ -7,7 +7,7 @@ ARG USER_CODE_PATH=${MAGE_CODE_PATH}/${PROJECT_NAME}
 WORKDIR ${MAGE_CODE_PATH}
 
 # Replace [project_name] with the name of your project (e.g. demo_project)
-COPY ${PROJECT_NAME} ${PROJECT_NAME}
+COPY mage_project/${PROJECT_NAME} ${PROJECT_NAME}
 
 # Set the USER_CODE_PATH variable to the path of user project.
 # The project path needs to contain project name.
